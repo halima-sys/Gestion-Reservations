@@ -10,7 +10,7 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
 
     List<Client> findClientsByNomContainsOrPrenomContainsOrEmailContainsOrCinContains(String mc1, String mc2, String mc3, String mc4);
 
-    List<Client> findPatientsByNomContainsOrPrenomContains(String query, String query1);
+    List<Client> findClientsByNomContainsOrPrenomContains(String query, String query1);
 
     // List<Patient> findPatientsByNomContains(String query);
 }

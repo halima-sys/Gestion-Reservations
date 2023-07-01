@@ -1,13 +1,11 @@
 package com.dwm.gestionreservations.entities;
 
-import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 
+
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.Date;
+import java.util.*;
 
 @Entity
 @AllArgsConstructor
