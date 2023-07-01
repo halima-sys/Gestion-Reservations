@@ -30,14 +30,8 @@ public class GestionServiceImpl implements IGestionService {
 
         return clientRepository.findAll();
     }
-    // @Override
-    // public List<Medecin> getAllMedecin() {
-    // return medecinRepository.findAll();}
 
-    ///**
-    // * @param medecin
-    //* @return
-    // */
+
     @Override
     public List<Reservation> getReservationsByOffre(Offre offre) {
         return null;
@@ -221,7 +215,9 @@ public class GestionServiceImpl implements IGestionService {
     //public List<Consultation> searchConsultationsByMedecin(String co) {
     //return null;
 
-
+    // @Override
+    // public List<Medecin> getAllMedecin() {
+    // return medecinRepository.findAll();}
 
     //@Override
     //public List<Consultation> searchConsultationsById(String query) {

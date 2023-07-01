@@ -1,10 +1,13 @@
 package com.dwm.gestionreservations.entities;
 
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 
 
 import java.util.Collection;
+import java.util.Date;
 
 @Entity
 @AllArgsConstructor
@@ -17,11 +20,14 @@ public class Offre {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @NonNull
-    private String nom;
+    private String destination;
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @Temporal(TemporalType.DATE)
+    private Date dateDepart;
     @NonNull
-    private String prenom;
-    private String email;
-    private String tel;
+    private Long nbNuitee;
+    private double prix;
+    private Boolean promo;
 
     @OneToMany(mappedBy = "offre")
     private Collection<Reservation> reservations;

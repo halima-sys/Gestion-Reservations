@@ -17,9 +17,8 @@ public class Reservation {
     private Long id; //Auto incrèment
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     @Temporal(TemporalType.DATE)
-    private Date dateConsultation;
-    private String description;
-
+    private Date dateReservation;
+    private Boolean confirmation;
     @ManyToOne
     private Offre offre;
 

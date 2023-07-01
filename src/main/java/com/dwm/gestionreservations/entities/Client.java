@@ -2,17 +2,20 @@ package com.dwm.gestionreservations.entities;
 
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import javax.persistence.*;
 import java.util.*;
 
-@Entity
+
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Data
-
+@Entity
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,9 +28,8 @@ public class Client {
     private String cin;
     private String tel;
     private String email;
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
-    @Temporal(TemporalType.DATE)
-    private Date dateNaissance;
+    private String passeport;
+
     @OneToMany(mappedBy = "client")
     private Collection<Reservation> Reservation;
 }
