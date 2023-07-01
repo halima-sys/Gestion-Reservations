@@ -25,7 +25,7 @@
             <th>ID</th>
             <th>Destination</th>
             <th>Date départ</th>
-            <th>Durée voyage</th>
+            <th>Nombre nuitées</th>
             <th>Prix</th>
             <th>Promo</th>
             <th>Action</th>
@@ -35,7 +35,7 @@
             <td th:text="${o.id}"></td>
             <td th:text="${o.destination}"></td>
             <td th:text="${o.dateDepart}"></td>
-            <td th:text="${o.dureeVoayage}"></td>
+            <td th:text="${o.nbNuitee}"></td>
             <td th:text="${o.prix}"></td>
             <td th:text="${o.promo}"></td>
             <td><a th:href="@{/deleteOffre(id=${o.id})}">Supprimer</a></td>

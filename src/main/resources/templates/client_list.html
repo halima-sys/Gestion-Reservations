@@ -18,7 +18,7 @@
         <input class="btn btn-outline-primary p-1" type="submit" value="Rchercher">
 
     </form>
-    <a class="btn btn-outline-primary btn-sm p-2" href="/addPatient">Nouveau</a>
+    <a class="btn btn-outline-primary btn-sm p-2" href="/addClient">Nouveau</a>
 
     <table class="table table-striped table-hover">
         <tr class="bg-info">
@@ -28,7 +28,7 @@
             <th>CIN</th>
             <th>Tel</th>
             <th>Email</th>
-            <th>N° Passport</th>
+            <th>N° Passeport</th>
             <th>Action</th>
 
         </tr>
@@ -39,7 +39,7 @@
             <td th:text="${c.cin}"></td>
             <td th:text="${c.tel}"></td>
             <td th:text="${c.email}"></td>
-            <td th:text="${c.passport}"></td>
+            <td th:text="${c.passeport}"></td>
             <td><a th:href="@{/deletePatient(id=${c.id})}">Supprimer</a></td>
 
         </tr>
