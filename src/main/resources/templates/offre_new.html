@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" layout:decorate="layout" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Nouvelle Offre</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
+    <script crossorigin="anonymous"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
+<div class="container" layout:fragment="content">
+    <form action="/saveOffre" method="post" th:object="${offre}">
+        <label class="form-label" for="destination">Destination :</label>
+        <input class="form-control" id="destination" name="destination" th:field="*{destination}" type="text">
+        <label class="form-label" for="dateDepart">Date départ :</label>
+        <input class="form-control" id="dateDepart" name="dateDepart" th:field="*{dateDepart}" type="date">
+        <label class="form-label" for="dureeVoyage">Durée voyage :</label>
+        <input class="form-control" id="dureeVoyage" name="dureeVoyage" th:field="*{dureeVoyage}" type="text">
+        <label class="form-label" for="prix">Prix :</label>
+        <input class="form-control" id="prix" name="prix" th:field="*{prix}" type="text">
+        <label class="form-label" for="promo">Promo :</label>
+        <input class="form-control" id="promo" name="promo" th:field="*{promo}" type="text">
+        <input class="btn btn-outline-primary mt-2" type="submit" value="Enregistrer">
+        <input class="btn btn-outline-primary mt-2" type="reset" value="Annuler">
+    </form>
+</div>
 </body>
 </html>

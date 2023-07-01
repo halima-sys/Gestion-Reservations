@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" layout:decorate="layout" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
+    <script crossorigin="anonymous"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+<div layout:fragment="content">
+    <form action="/offres" method="get">
+        <label class="form-label" for="mc">Mot clé :</label>
+        <input id="mc" name="mc" type="search">
+        <input class="btn btn-outline-primary p-1" type="submit" value="Rchercher">
 
+    </form>
+    <a class="btn btn-outline-primary btn-sm p-2" href="/addOffre">Nouveau</a>
+
+    <table class="table table-striped table-hover">
+        <tr class="bg-info">
+            <th>ID</th>
+            <th>Destination</th>
+            <th>Date départ</th>
+            <th>Durée voyage</th>
+            <th>Prix</th>
+            <th>Promo</th>
+            <th>Action</th>
+
+        </tr>
+        <tr th:each="o:${offres}">
+            <td th:text="${o.id}"></td>
+            <td th:text="${o.destination}"></td>
+            <td th:text="${o.dateDepart}"></td>
+            <td th:text="${o.dureeVoayage}"></td>
+            <td th:text="${o.prix}"></td>
+            <td th:text="${o.promo}"></td>
+            <td><a th:href="@{/deleteOffre(id=${o.id})}">Supprimer</a></td>
+
+        </tr>
+    </table>
+</div>
 </body>
 </html>
